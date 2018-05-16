@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弗兰克赫兹实验画图</title>
+    <style>
+        td{border:1px;text-align:center;}
+
+        h1{position:relative;
+        left:40%;
+        font-size:30px;}
+        h2{font-size:20px}
+
+    </style>
+</head>
+<body>
+
+<h1>弗兰克赫兹统计实验画图</h1><br>
+<h2>数据记录表一</h2>
+
+<form method="post" name="form1">
+    {{ form1.hidden_tag() }}
+    <table>
+        <tr>{{ form1.name1.label }}{{ form1.name1() }}</tr>
+        <tr>
+            {% for i in range(point_num) %}
+                {% set element = "form1_point_" + i|string %}
+            <td>{{ form1[element].label }}{{ form1[element]() }}</td>
+            {% endfor %}
+        </tr>
+
+        <tr>
+            <td>{{ form1.submit1() }}</td>
+        </tr>
+    </table>
+</form>
+
+<h2>数据记录表二</h2>
+<form method="post" name="form2">
+    {{ form2.hidden_tag() }}
+    <table>
+        <tr>{{ form2.name2.label }}{{ form2.name2() }}</tr>
+        <tr>
+            {% for i in range(point_num) %}
+                {% set element = "form2_point_" + i|string %}
+            <td>{{ form2[element].label }}{{ form2[element]() }}</td>
+            {% endfor %}
+        </tr>
+
+        <tr>
+            <td>{{ form2.submit2() }}</td>
+        </tr>
+    </table>
+</form>
+
+<h2>数据记录表三</h2>
+<form method="post" name="form3">
+    {{ form3.hidden_tag() }}
+    <table>
+        <tr>{{ form3.name3.label }}{{ form3.name3() }}</tr>
+        <tr>
+            {% for i in range(point_num) %}
+                {% set element = "form3_point_" + i|string %}
+            <td>{{ form3[element].label }}{{ form3[element]() }}</td>
+            {% endfor %}
+        </tr>
+
+        <tr>
+            <td>{{ form3.submit3() }}</td>
+        </tr>
+    </table>
+</form>
+
+<h2>数据记录表四</h2>
+<form method="post" name="form4">
+    {{ form4.hidden_tag() }}
+    <table>
+        <tr>{{ form4.name4.label }}{{ form4.name4() }}</tr>
+        <tr>
+            {% for i in range(point_num) %}
+                {% set element = "form4_point_" + i|string %}
+            <td>{{ form4[element].label }}{{ form4[element]() }}</td>
+            {% endfor %}
+        </tr>
+
+        <tr>
+            <td>{{ form4.submit4() }}</td>
+        </tr>
+    </table>
+</form>
+
+</body>
+
+</html>

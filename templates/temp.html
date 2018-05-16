@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弗兰克赫兹实验画图</title>
+    <style>
+        td{border:1px solid;text-align:center;}
+
+        h1{position:relative;
+        left:40%;
+        font-size:30px;}
+
+
+    </style>
+</head>
+<body>
+
+<h1>弗兰克赫兹统计实验画图</h1><br>
+
+
+<form method="post" name="form1">
+    {{ form1.hidden_tag() }}
+    <table>
+        {% set n = [0, 7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98, 105, 112, 119, 126, 133, 140, 147, 154, 161] %}
+        {% for j in range(23) %}
+        <tr>
+            {% for i in range(n[j], n[j+1]) %}
+                {% set element = "form1_point_" + i|string %}
+            <td>{{ form1[element].label }}{{ form1[element]() }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>{{ form1.submit1() }}</td>
+        </tr>
+    </table>
+</form>
+</body>
+
+</html>
